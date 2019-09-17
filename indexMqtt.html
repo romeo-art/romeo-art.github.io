@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>INDEX MQTT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div style="border-bottom: solid #cfd1d1 2px; padding-top: 40px; height:3cm; background-color: rgb(129, 182, 182)">
+        <center class="align-middle"><h3>MQTT IN WEB</h3></center>
+    </div>
+    <div style="height: 1cm"></div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg rounded-lg" style="border:solid rgb(194, 193, 192) 1px">
+                <h4 style="text-align: center">Publish</h4>
+                <label for="topic"><b>Topic:</b></label><br>
+                <input type="text" id="publishTopic" value="World" style="width: 345px"><br>
+                <label for="Payload"><b>Payload:</b></label><br>
+                <input type="text" id="publishMessage" value="Hello World!" style="width: 345px"><br><br>
+                <button id="publish" class="btn btn-primary"><b>Publish</b></button>
+            </div>
+
+            <div class="col-lg rounded-lg" style= "border:solid rgb(253, 194, 194) 1px">
+                <h4 style="text-align: center">Subscribe</h4>
+                <label for="topic"><b>Topic:</b></label><br>
+                <input type="text" id="subscribeTopic" value="World" style="width: 345px"><br><br>
+                <button id="subscribe" class="btn btn-primary">Subscribe</button>
+                <button id="unsubscribe" class="btn btn-primary">Unsubscribe</button>
+                <h5>Status:</h5>
+                <p style="margin-left: 1cm" id="subscriberStatus">Unsubscribe!</p>
+            </div>
+
+
+            <div class="col-lg rounded-lg" style="border:solid rgb(194, 193, 192) 1px">
+                <h4 style="text-align: center">Broker</h4>
+                <label for="broker"><b>Address:</b></label><br>
+                <input type="text" id="address" value="wss://test.mosquitto.org:8081/mqtt" style="width: 345px"><br><br>
+                <button id="connect" class="btn btn-primary">Connect</button>
+                <button id="disconnect" class="btn btn-primary">Disconnect</button>
+
+                <h5>Status:</h5>
+                <p style="margin-left: 1cm" id="status">Disconnected!</p>
+            </div>
+        </div>
+    </div>
+    <div class="table card" style="width: 100%" id="table">
+        <table>
+            <tr class="bg-info">
+                <th>Topic</th>
+                <th>Payload</th>
+                <th>Timestamp</th>
+            </tr>
+        </table>
+        <br>
+    </div>
+    
+    <script src="scripts/sourceController.js"></script>
+    <script src="scripts/mycontroller.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+
+</body>
+
+</html>
